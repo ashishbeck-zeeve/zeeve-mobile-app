@@ -14,7 +14,7 @@ class LoginBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<LoginNotifier>(
       builder: (context, state, child) {
-        return Text(state.count.toString());
+        return Center(child: Text(state.count.toString()));
       },
     );
   }

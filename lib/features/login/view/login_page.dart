@@ -13,17 +13,18 @@ class LoginPage extends StatelessWidget {
   static Route<dynamic> route() {
     return MaterialPageRoute<dynamic>(builder: (_) => const LoginPage());
   }
- 
+
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (context) =>
-          ChangeNotifierProvider(create: (_) => LoginNotifier()),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LoginNotifier()),
+      ],
       child: const Scaffold(
         body: LoginView(),
       ),
     );
-  }   
+  }
 }
 
 /// {@template login_view}
