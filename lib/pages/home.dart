@@ -2,7 +2,10 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zeeve/features/dashboard/view/dashboard_page.dart';
+import 'package:zeeve/features/endpoints/endpoints.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
+import 'package:zeeve/features/networks/networks.dart';
+import 'package:zeeve/features/settings/settings.dart';
 import 'package:zeeve/features/workspace/view/workspace_page.dart';
 import 'package:zeeve/models/drawer_page.dart';
 import 'package:zeeve/providers/auth.dart';
@@ -35,6 +38,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       icon: const Icon(Icons.shopping_basket),
       page: const MarketplacePage(),
     ),
+    DrawerPage(
+      title: 'Networks',
+      icon: const Icon(Icons.pie_chart),
+      page: const NetworksPage(),
+    ),
+    DrawerPage(
+      title: 'Endpoints',
+      icon: const Icon(Icons.polyline_outlined),
+      page: const EndpointsPage(),
+    ),
+    DrawerPage(
+      title: 'Settings',
+      icon: const Icon(Icons.settings),
+      page: const SettingsPage(),
+    ),
   ];
 
   @override
@@ -53,6 +71,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         title: Text(e.title),
         onTap: () {
           Navigator.pop(context);
+          if (e.title == 'Settings') {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => e.page));
+            return;
+          }
           setState(() {
             index = drawerPages.indexWhere((x) => x.title == e.title);
           });

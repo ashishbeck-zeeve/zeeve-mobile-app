@@ -2,28 +2,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 
 class CommonWidgets {
-  CommonWidgets._();
-
-  static AppBar appBar(
-    BuildContext context,
-    String title, {
-    bool showBack = true,
-  }) {
-    return AppBar(
-      title: Text(title),
-      centerTitle: true,
-      leading: showBack
-          ? IconButton(
-              icon: const Icon(Icons.keyboard_arrow_left),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            )
-          : null,
-    );
-  }
-
-  static Widget commonButton(BuildContext context, String label,
+  Widget commonButton(BuildContext context, String label,
       {Function()? onPressed, Widget? icon}) {
     return SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -39,7 +18,7 @@ class CommonWidgets {
               ));
   }
 
-  static Widget messageButton(
+  Widget messageButton(
       String label, String msg, IconData icon, Function()? onPressed) {
     return GestureDetector(
       onTap: onPressed,

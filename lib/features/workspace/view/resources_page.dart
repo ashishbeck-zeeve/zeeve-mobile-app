@@ -2,6 +2,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
+import 'package:zeeve/features/networks/view/buysubscription_page.dart';
 import 'package:zeeve/features/workspace/provider/provider.dart';
 import 'package:zeeve/features/workspace/widgets/resources_body.dart';
 import 'package:zeeve/features/workspace/widgets/workspace_body.dart';
@@ -32,14 +33,22 @@ class ResourcesPage extends StatelessWidget {
               child: const Icon(Icons.private_connectivity),
               label: "Add Endpoint",
               onTap: () {
-                Navigator.push(context, MarketplacePage.route());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            BuySubscriptionPage(isnetworkPage: false)));
               },
             ),
             SpeedDialChild(
               child: const Icon(Icons.control_point_duplicate),
               label: "Add Network",
               onTap: () {
-                Navigator.push(context, MarketplacePage.route());
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            BuySubscriptionPage(isnetworkPage: true)));
               },
             ),
           ],

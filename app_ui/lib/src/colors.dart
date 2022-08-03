@@ -27,10 +27,13 @@ abstract class ZeeveColors {
   static const Color transparent = Color(0x00000000);
 
   /// Primary
-  static const Color primary = Color(0xFF0000FF);
+  static const Color primary = Color(0xFF0062ff);
 
   /// Secondary
-  static const Color secondary = Color(0xFFFB5246);
+  static const Color secondary = Color(0xFF073EF3);
+
+  /// ternary
+  static const Color ternary = Color(0xffE1ECFC);
 
   /// Green
   static const Color green = Color(0xFF3fBC5C);
