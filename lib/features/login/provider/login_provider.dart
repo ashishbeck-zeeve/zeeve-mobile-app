@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:zeeve/services/auth_service.dart';
 
 class LoginNotifier with ChangeNotifier {
-  int _count = 0;
+  String? _authToken;
+  String? get authToken => _authToken;
 
-  int get count => _count;
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
 
-  void increment() {
-    _count++;
+  Future<String> signIn(String email, String password) async {
+    _isLoading = true;
     notifyListeners();
-  }
-
-  void decrement() {
-    _count--;
+    var result = await authService.signIn(email, password);
+    _isLoading = false;
     notifyListeners();
-  }
-
-  void reset() {
-    _count = 0;
-    notifyListeners();
+    return result;
   }
 }

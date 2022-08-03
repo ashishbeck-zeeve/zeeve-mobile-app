@@ -1,8 +1,21 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:provider/provider.dart';
+import 'package:zeeve/pages/auth_wrapper.dart';
+import 'package:zeeve/providers/auth.dart';
+import 'package:zeeve/services/auth_service.dart';
+import 'package:zeeve/services/storage_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initServices();
   runApp(const MyApp());
+}
+
+initServices() async {
+  await GetStorage().initStorage;
+  await storageService.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +24,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ZeeveTheme.standard,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthWrapperNotifier()),
+      ],
+      child: MaterialApp(
+        title: 'Zeeve Mobile App',
+        debugShowCheckedModeBanner: false,
+        theme: ZeeveTheme.standard,
+        // home: const LoginPage(),
+        home: const AuthWrapperPage(),
+      ),
     );
   }
 }
@@ -53,6 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.watch<AuthWrapperNotifier>();
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -95,10 +116,30 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        children: [
+          FloatingActionButton(
+            onPressed: () async {
+              String token = await authService.signIn('', '');
+              provider.updateAuthToken(token);
+            },
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(
+            width: 8,
+          ),
+          FloatingActionButton(
+            onPressed: () async {
+              bool success = await authService.signOut();
+              if (success) {
+                provider.updateAuthToken(null);
+              }
+            },
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          ),
+        ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

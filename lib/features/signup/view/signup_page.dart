@@ -13,17 +13,16 @@ class SignupPage extends StatelessWidget {
   static Route<dynamic> route() {
     return MaterialPageRoute<dynamic>(builder: (_) => const SignupPage());
   }
- 
+
   @override
   Widget build(BuildContext context) {
-    return Provider(
-      create: (context) =>
-          ChangeNotifierProvider(create: (_) => SignupNotifier()),
+    return ChangeNotifierProvider(
+      create: (_) => SignupNotifier(),
       child: const Scaffold(
         body: SignupView(),
       ),
     );
-  }   
+  }
 }
 
 /// {@template signup_view}

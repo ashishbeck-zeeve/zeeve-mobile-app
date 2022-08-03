@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:zeeve/services/auth_service.dart';
 
 class SignupNotifier with ChangeNotifier {
-  int _count = 0;
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
 
-  int get count => _count;
-
-  void increment() {
-    _count++;
+  Future<String> signUp(
+    String email,
+    String password,
+    String firstName,
+    String lastName,
+  ) async {
+    _isLoading = true;
     notifyListeners();
-  }
-
-  void decrement() {
-    _count--;
+    var result = await authService.signUp(email, password, firstName, lastName);
+    _isLoading = false;
     notifyListeners();
-  }
-
-  void reset() {
-    _count = 0;
-    notifyListeners();
+    return result;
   }
 }

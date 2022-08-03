@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 
 class MarketplaceNotifier with ChangeNotifier {
-  int _count = 0;
+  int? _cloudValue;
+  int? get cloudValue => _cloudValue;
 
-  int get count => _count;
+  String? _cloudProvidersValue;
+  String? get cloudProvidersValue => _cloudProvidersValue;
 
-  void increment() {
-    _count++;
+  int? _nodeValue;
+  int? get nodeValue => _nodeValue;
+
+  updateCloudValue(int value) {
+    _cloudValue = value;
     notifyListeners();
   }
 
-  void decrement() {
-    _count--;
+  updateCloudProvidersValue(String value) {
+    _cloudProvidersValue = value;
     notifyListeners();
   }
 
-  void reset() {
-    _count = 0;
+  updateNodeValue(int value) {
+    _nodeValue = value;
     notifyListeners();
   }
 }
