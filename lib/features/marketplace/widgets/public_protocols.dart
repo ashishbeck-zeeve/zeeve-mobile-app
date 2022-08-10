@@ -12,20 +12,19 @@ class PublicProtocols extends StatelessWidget {
           title: 'Avalanche',
           description:
               'Avalanche is an open, programmable smart contracts platform with low cost and Solidity compatible dApps. It is the fastest platform as measured by time-to-finality.',
-          imgPath:
-              'https://app.zeeve.io/app/static/media/Avalanche.dc864b9e.svg',
+          imgPath: 'assets/images/avalanche.svg',
         ),
         ProtocolItem(
           title: 'AXIA',
           description:
               'Axia is an open, programmable smart contracts platform with low cost and Solidity compatible dApps. It is the fastest platform as measured by time-to-finality.',
-          imgPath: 'https://app.zeeve.io/app/static/media/Axia.827ca4c4.svg',
+          imgPath: 'assets/images/axia.svg',
         ),
         ProtocolItem(
           title: 'Binance',
           description:
               'Binance is an EVM-compatible customized blockchain protocol forked out of Geth and uses consensus of Proof of Staked Authority (PoSA)',
-          imgPath: 'https://app.zeeve.io/app/static/media/Binance.751eeaa9.svg',
+          imgPath: 'assets/images/binance.svg',
         ),
       ],
     );

@@ -8,9 +8,9 @@ class MyDrawer extends StatelessWidget {
   /// {@macro drawer}
   const MyDrawer({
     Key? key,
-    required this.drawerPages,
+    this.drawerPages,
   }) : super(key: key);
-  final List<Widget> drawerPages;
+  final List<Widget>? drawerPages;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class MyDrawer extends StatelessWidget {
                 end: Alignment.bottomCenter,
                 colors: [ZeeveColors.primary, Colors.white],
                 stops: [0.1, 0])),
-        child: ListView(
+        child: Column(
           children: [
             const UserAccountsDrawerHeader(
               accountName: Text('John Doe'),
@@ -30,7 +30,11 @@ class MyDrawer extends StatelessWidget {
               currentAccountPicture: CircleAvatar(child: Text('JD')),
               decoration: BoxDecoration(color: ZeeveColors.primary),
             ),
-            ...drawerPages
+            const Spacer(),
+            ...drawerPages ?? [],
+            const SizedBox(
+              height: 16,
+            )
           ],
         ),
       ),

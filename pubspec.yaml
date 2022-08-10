@@ -21,6 +21,7 @@ dependencies:
   flutter_staggered_grid_view: ^0.6.2
   flutter_speed_dial: any
   auto_size_text: any
+  fl_chart: ^0.55.1
   
   # state management
   provider: any
@@ -30,6 +31,7 @@ dependencies:
   flutter_secure_storage: ^5.0.2
   curved_navigation_bar: ^1.0.3
   toggle_switch: ^2.0.1
+  persistent_bottom_nav_bar: ^4.0.2
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/endpoints/provider/provider.dart';
 import 'package:zeeve/features/endpoints/widgets/endpoints_body.dart';
@@ -15,12 +16,9 @@ class EndpointsPage extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => EndpointsNotifier()),
       ],
-      child: const Scaffold(
-        // appBar: AppBar(
-        //   title: const Text("End Points"),
-        //   centerTitle: true,
-        // ),
-        body: EndpointsView(),
+      child: Scaffold(
+        appBar: CommonWidgets.appBar(context, 'Marketplace'),
+        body: const EndpointsView(),
       ),
     );
   }

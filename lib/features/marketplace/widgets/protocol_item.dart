@@ -31,9 +31,9 @@ class ProtocolItem extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SvgPicture.network(
+            SvgPicture.asset(
               imgPath,
-              height: 50,
+              height: 75,
             ),
             Text(
               description,

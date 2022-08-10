@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/networks/provider/provider.dart';
 import 'package:zeeve/features/networks/widgets/networks_body.dart';
@@ -16,12 +17,12 @@ class NetworksPage extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => NetworksNotifier()),
       ],
-      child: const Scaffold(
-        // appBar: AppBar(
-        //   title: const Text("Network"),
-        //   centerTitle: true,
-        // ),
-        body: NetworksView(),
+      child: Scaffold(
+        appBar: CommonWidgets.appBar(
+          context,
+          'Network',
+        ),
+        body: const NetworksView(),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/workspace/provider/provider.dart';
 import 'package:zeeve/features/workspace/widgets/workspace_body.dart';
@@ -19,10 +20,7 @@ class WorkspacePage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => WorkspaceNotifier(),
       child: Scaffold(
-        // appBar: AppBar(
-        //   title: const Text('Workspace'),
-        //   centerTitle: true,
-        // ),
+        appBar: CommonWidgets.appBar(context, 'Workspace'),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},
           label: Text('New Workspace'),

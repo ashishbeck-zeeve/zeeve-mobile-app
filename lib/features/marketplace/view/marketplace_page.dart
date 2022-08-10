@@ -20,13 +20,10 @@ class MarketplacePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => MarketplaceNotifier(),
-      child: const DefaultTabController(
+      child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          // appBar: AppBar(
-          //   title: const Text("Marketplace"),
-          //   centerTitle: true,
-          // ),
+          appBar: CommonWidgets.appBar(context, 'Marketplace'),
           // drawer: const MyDrawer(),
           body: const MarketplaceView(),
         ),

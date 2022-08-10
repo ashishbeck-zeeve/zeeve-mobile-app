@@ -27,13 +27,29 @@ class Nodes extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: ZeeveColors.gray,
+              image: const DecorationImage(
+                image: AssetImage(
+                  "assets/images/bg.png",
+                ),
+                fit: BoxFit.cover,
+                opacity: 0.25,
+              ),
             ),
             child: Column(
               children: [
-                Text(
-                  'Deploy Your First Node',
-                  style: ZeeveTextStyle.headline5
-                      .copyWith(color: ZeeveColors.primary),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.add,
+                      color: ZeeveColors.primary,
+                    ),
+                    Text(
+                      'Deploy Your First Node',
+                      style: ZeeveTextStyle.headline5
+                          .copyWith(color: ZeeveColors.primary),
+                    ),
+                  ],
                 ),
                 Text(
                   'Deploy a node of your choice of protocol in a few clicks with your choice of infrastructure and configurations. Let Zeeve worry about what it takes to get your service up and running!',

@@ -19,7 +19,7 @@ import 'package:zeeve/features/marketplace/widgets/textfield.dart';
 class PurchaseBody extends StatelessWidget {
   /// {@macro marketplace_body}
   PurchaseBody({Key? key}) : super(key: key);
-  final controller = TextEditingController(text: '1');
+  final controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
