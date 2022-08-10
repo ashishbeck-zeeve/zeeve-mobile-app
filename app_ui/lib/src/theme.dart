@@ -10,8 +10,7 @@ class ZeeveTheme {
   /// Standard `ThemeData` for Zeeve UI.
   static ThemeData get standard {
     return ThemeData(
-      colorScheme:
-          ColorScheme.fromSwatch(accentColor: ZeeveColors.primary),
+      colorScheme: ColorScheme.fromSwatch(accentColor: ZeeveColors.primary),
       appBarTheme: _appBarTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       outlinedButtonTheme: _outlinedButtonTheme,

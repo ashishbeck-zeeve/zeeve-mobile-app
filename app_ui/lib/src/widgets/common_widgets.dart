@@ -10,6 +10,7 @@ class CommonWidgets {
     bool showBack = true,
   }) {
     return AppBar(
+      elevation: 10,
       title: Text(title),
       centerTitle: true,
       leading: showBack
@@ -23,54 +24,76 @@ class CommonWidgets {
     );
   }
 
-  static Widget commonButton(BuildContext context, String label,
-      {Function()? onPressed, Widget? icon}) {
-    return SizedBox(
-        width: MediaQuery.of(context).size.width,
-        child: icon != null
-            ? ElevatedButton.icon(
-                icon: icon,
-                onPressed: onPressed ?? () {},
-                label: Text(label),
-              )
-            : ElevatedButton(
-                onPressed: onPressed ?? () {},
-                child: Text(label),
-              ));
-  }
+  // static Widget commonButton(
+  //   BuildContext context,
+  //   String label, {
+  //   Function()? onPressed,
+  //   Widget? icon,
+  // }) {
+  //   return SizedBox(
+  //     width: MediaQuery.of(context).size.width,
+  //     child: icon != null
+  //         ? ElevatedButton.icon(
+  //             icon: icon,
+  //             onPressed: onPressed ?? () {},
+  //             label: Text(label),
+  //           )
+  //         : ElevatedButton(
+  //             onPressed: onPressed ?? () {},
+  //             child: Text(label),
+  //           ),
+  //   );
+  // }
 
   static Widget messageButton(
-      String label, String msg, IconData icon, Function()? onPressed) {
+    BuildContext context,
+    String label,
+    String msg,
+    IconData icon,
+    // Function()? onPressed,
+  ) {
     return GestureDetector(
-      onTap: onPressed,
+      // onTap: onPressed,
       child: Container(
-          margin: const EdgeInsets.all(8),
-          padding: const EdgeInsets.all(8),
-          decoration: const BoxDecoration(
-            color: ZeeveColors.ternary,
-            borderRadius: BorderRadius.all(Radius.circular(25.0)),
-            // border: Border.all(color: ZeeveColors.secondary),
+        margin: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          image: const DecorationImage(
+            fit: BoxFit.fitHeight,
+            opacity: 0.1,
+            image: AssetImage('assets/images/networking.png'),
           ),
-          width: 180,
-          height: 250,
-          child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: ZeeveColors.primary,
-                  foregroundColor: ZeeveColors.ternary,
-                  child: Icon(icon, size: 35),
-                ),
-                Text(label,
-                    style: const TextStyle(
-                        color: ZeeveColors.secondary, fontSize: 18)),
-                Text(msg,
-                    style: const TextStyle(color: ZeeveColors.black54),
-                    textAlign: TextAlign.center)
-              ])),
+          border: Border.all(color: ZeeveColors.gray),
+          borderRadius: BorderRadius.circular(15),
+          // border: Border.all(color: ZeeveColors.secondary),
+        ),
+        width: MediaQuery.of(context).size.width * 0.4,
+        height: 250,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // CircleAvatar(
+            //   radius: 30,
+            //   backgroundColor: ZeeveColors.primary,
+            //   foregroundColor: ZeeveColors.white,
+            //   child: Icon(icon, size: 35),
+            // ),
+            // Text(
+            //   label,
+            //   style: const TextStyle(
+            //     color: ZeeveColors.secondary,
+            //     fontSize: 18,
+            //   ),
+            // ),
+            Text(
+              msg,
+              style: const TextStyle(color: ZeeveColors.black),
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
+      ),
     );
   }
 }

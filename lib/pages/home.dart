@@ -1,12 +1,12 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:zeeve/features/dashboard/view/dashboard_page.dart';
 import 'package:zeeve/features/endpoints/endpoints.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/networks/networks.dart';
 import 'package:zeeve/features/settings/settings.dart';
 import 'package:zeeve/features/workspace/view/workspace_page.dart';
+import 'package:zeeve/features/zdfs/view/zdfs_page.dart';
 import 'package:zeeve/models/drawer_page.dart';
 import 'package:zeeve/providers/auth.dart';
 
@@ -53,6 +53,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       icon: const Icon(Icons.settings),
       page: const SettingsPage(),
     ),
+    DrawerPage(
+      title: 'ZDFS',
+      icon: const Icon(Icons.folder_special),
+      page: const ZdfsPage(),
+    ),
   ];
 
   @override
@@ -71,7 +76,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         title: Text(e.title),
         onTap: () {
           Navigator.pop(context);
-          if (e.title == 'Settings') {
+          if (e.title == 'Settings' || e.title == 'ZDFS') {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => e.page));
             return;

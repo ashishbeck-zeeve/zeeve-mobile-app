@@ -16,35 +16,43 @@ class _CloudPageState extends State<CloudPage> {
     double height = MediaQuery.of(context).size.height;
     List<String> labels = ["AWS", "Azure", "Digitalocean", "GCP"];
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+          icon: const Icon(Icons.cloud),
+          onPressed: () {},
+          label: const Text("Add Cloud")),
       body: Container(
         padding: const EdgeInsets.all(16),
         width: width,
         height: height,
         child: Column(
           children: [
-            ToggleSwitch(
-              // minWidth: 50.0,
-              minHeight: 50.0,
-              initialLabelIndex: 0,
-              cornerRadius: 20.0,
-              animate: true,
-              animationDuration: 300,
-              activeBgColor: const [ZeeveColors.primary],
-              inactiveBgColor: ZeeveColors.whiteBackground,
-              // inactiveFgColor: ZeeveColors.black25,
-              totalSwitches: 4,
-              labels: labels,
-              iconSize: 30.0,
-              borderColor: const [ZeeveColors.primary],
-              dividerColor: ZeeveColors.black,
-              onToggle: (index) {
-                print('switched to: $index');
-              },
+            Material(
+              borderRadius: BorderRadius.circular(20.0),
+              elevation: 5,
+              child: ToggleSwitch(
+                // minWidth: 50.0,
+                minHeight: 50.0,
+                initialLabelIndex: 0,
+                cornerRadius: 20.0,
+                animate: true,
+                animationDuration: 300,
+                activeBgColor: const [ZeeveColors.primary],
+                inactiveBgColor: ZeeveColors.whiteBackground,
+                // inactiveFgColor: ZeeveColors.black25,
+                totalSwitches: 4,
+                labels: labels,
+                iconSize: 30.0,
+                borderColor: const [ZeeveColors.primary],
+                dividerColor: ZeeveColors.black,
+                onToggle: (index) {
+                  print('switched to: $index');
+                },
+              ),
             ),
             // const Spacer(),
             const Expanded(child: Center(child: Text("No Data"))),
-            CommonWidgets.commonButton(context, "Add Cloud",
-                icon: const Icon(Icons.add))
+            // CommonWidgets.commonButton(context, "Add Cloud",
+            //     icon: const Icon(Icons.add))
           ],
         ),
       ),

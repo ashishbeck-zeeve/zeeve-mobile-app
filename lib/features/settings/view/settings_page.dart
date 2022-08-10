@@ -46,11 +46,17 @@ class _SettingsPageState extends State<SettingsPage> {
               onPressed: () {},
             )
           ],
+          leading: IconButton(
+            icon: const Icon(Icons.keyboard_arrow_left),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
         ),
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: 0,
-          height: 55.0,
+          height: 60.0,
           items: const <Widget>[
             Icon(Icons.person),
             Icon(Icons.cloud),
