@@ -5,6 +5,7 @@ import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/networks/networks.dart';
 import 'package:zeeve/features/settings/settings.dart';
 import 'package:zeeve/features/workspace/workspace.dart';
+import 'package:zeeve/features/zdfs/zdfs.dart';
 import 'package:zeeve/models/drawer_page.dart';
 
 class ExplorePage extends StatefulWidget {
@@ -42,6 +43,11 @@ class _ExplorePageState extends State<ExplorePage> {
         title: 'Endpoints',
         icon: const Icon(Icons.polyline_outlined, color: ZeeveColors.primary),
         page: const EndpointsPage(),
+      ),
+      DrawerPage(
+        title: 'ZDFS',
+        icon: const Icon(Icons.folder_special, color: ZeeveColors.primary),
+        page: const ZdfsPage(),
       ),
       DrawerPage(
         title: 'Settings',

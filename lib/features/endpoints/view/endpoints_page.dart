@@ -18,6 +18,7 @@ class EndpointsPage extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => EndpointsNotifier()),
       ],
       child: Scaffold(
+        appBar: CommonWidgets.appBar(context, 'Endpoints'),
         floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.polyline_outlined),
             onPressed: () => Navigator.push(

@@ -19,6 +19,10 @@ class NetworksPage extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => NetworksNotifier()),
       ],
       child: Scaffold(
+        appBar: CommonWidgets.appBar(
+          context,
+          'Network',
+        ),
         floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.pie_chart),
             onPressed: () => Navigator.push(

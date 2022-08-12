@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:app_ui/src/colors.dart';
 import 'package:flutter/material.dart';
 
 /// {@template drawer}
@@ -27,7 +28,10 @@ class MyDrawer extends StatelessWidget {
             const UserAccountsDrawerHeader(
               accountName: Text('John Doe'),
               accountEmail: Text('john@doe.com'),
-              currentAccountPicture: CircleAvatar(child: Text('JD')),
+              currentAccountPicture: CircleAvatar(
+                child: Text('JD'),
+                backgroundColor: ZeeveColors.secondary,
+              ),
               decoration: BoxDecoration(color: ZeeveColors.primary),
             ),
             const Spacer(),
