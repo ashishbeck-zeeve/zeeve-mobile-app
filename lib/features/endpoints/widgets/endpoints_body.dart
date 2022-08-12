@@ -1,8 +1,6 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:zeeve/core/common_widgets.dart';
 import 'package:zeeve/features/endpoints/provider/provider.dart';
-
-import '../../networks/view/buysubscription_page.dart';
 
 class EndpointsBody extends StatelessWidget {
   const EndpointsBody({Key? key}) : super(key: key);
@@ -21,24 +19,26 @@ class EndpointsBody extends StatelessWidget {
             children: [
               Expanded(
                 child: Center(
-                  child: CommonWidgets().messageButton(
-                      "Add Endpoint",
-                      "First step to join this program you must login & register",
-                      Icons.add,
-                      () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  BuySubscriptionPage(isnetworkPage: false)))),
+                  child: CommonWidgets.messageButton(
+                    context,
+                    "Add Endpoint",
+                    "First step to join this program you must login & register",
+                    Icons.add,
+                    // () => Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (context) =>
+                    //             BuySubscriptionPage(isnetworkPage: false)))
+                  ),
                 ),
               ),
-              CommonWidgets().commonButton(context, "Add Endpoint",
-                  icon: const Icon(Icons.add),
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              BuySubscriptionPage(isnetworkPage: false)))),
+              // CommonWidgets.commonButton(context, "Add Endpoint",
+              //     icon: const Icon(Icons.add),
+              //     onPressed: () => Navigator.push(
+              //         context,
+              //         MaterialPageRoute(
+              //             builder: (context) =>
+              //                 BuySubscriptionPage(isnetworkPage: false)))),
             ],
           ),
         );

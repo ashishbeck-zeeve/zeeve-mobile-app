@@ -8,6 +8,7 @@ import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/networks/networks.dart';
 import 'package:zeeve/features/settings/settings.dart';
 import 'package:zeeve/features/workspace/view/workspace_page.dart';
+import 'package:zeeve/features/zdfs/view/zdfs_page.dart';
 import 'package:zeeve/models/drawer_page.dart';
 import 'package:zeeve/pages/explore.dart';
 import 'package:zeeve/providers/auth.dart';

@@ -15,19 +15,22 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     double height = MediaQuery.of(context).size.height;
 
     Widget subscriptionTiles(String label, String content) {
-      return Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: ZeeveColors.secondary),
-          color: ZeeveColors.ternary,
-          borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+      return Material(
+        elevation: 3,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: ZeeveColors.gray),
+            color: ZeeveColors.ternary,
+            borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+          ),
+          margin: const EdgeInsets.all(8),
+          width: width,
+          height: 60,
+          child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [Text("$label :"), Text(" $content")]),
         ),
-        margin: const EdgeInsets.all(4),
-        width: width,
-        height: 60,
-        child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text("$label :"), Text(" $content")]),
       );
     }
 
@@ -35,25 +38,22 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
       return Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          border: Border.all(color: ZeeveColors.secondary),
-          color: ZeeveColors.primary,
-          borderRadius: const BorderRadius.all(Radius.circular(25.0)),
+          border: Border.all(color: ZeeveColors.gray),
+          borderRadius: BorderRadius.circular(15),
         ),
         margin: const EdgeInsets.all(12),
         width: width * 0.4,
-        height: height * 0.3,
+        height: height * 0.25,
         child: Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
-              Text("Services:", style: TextStyle(color: ZeeveColors.white)),
-              Text("Monthly Cost:", style: TextStyle(color: ZeeveColors.white)),
-              Text("Next Billing Cycle:",
-                  style: TextStyle(color: ZeeveColors.white)),
-              Text("Total Subscribed:",
-                  style: TextStyle(color: ZeeveColors.white)),
-              Text("Available:", style: TextStyle(color: ZeeveColors.white))
+              Text("Services:"),
+              Text("Monthly Cost:"),
+              Text("Next Billing Cycle:"),
+              Text("Total Subscribed:"),
+              Text("Available:")
             ]),
       );
     }
