@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:zeeve/features/dashboard/provider/provider.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
 

@@ -1,17 +1,8 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:provider/provider.dart';
 import 'package:zeeve/features/dashboard/view/dashboard_page.dart';
-import 'package:zeeve/features/endpoints/endpoints.dart';
-import 'package:zeeve/features/marketplace/marketplace.dart';
-import 'package:zeeve/features/networks/networks.dart';
-import 'package:zeeve/features/settings/settings.dart';
-import 'package:zeeve/features/workspace/view/workspace_page.dart';
-import 'package:zeeve/features/zdfs/view/zdfs_page.dart';
-import 'package:zeeve/models/drawer_page.dart';
 import 'package:zeeve/pages/explore.dart';
-import 'package:zeeve/providers/auth.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -84,11 +75,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           NavBarStyle.style8, // Choose the nav bar style with this property.
     );
 
-    return MyButton(
-        text: 'logout',
-        onPressed: () {
-          final authWrapper = context.read<AuthWrapperNotifier>();
-          authWrapper.updateAuthToken(null);
-        });
+    // return MyButton(
+    //     text: 'logout',
+    //     onPressed: () {
+    //       final authWrapper = context.read<AuthWrapperNotifier>();
+    //       authWrapper.updateAuthToken(null);
+    //     });
   }
 }

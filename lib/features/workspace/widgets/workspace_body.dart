@@ -16,7 +16,7 @@ class WorkspaceBody extends StatelessWidget {
     return Consumer<WorkspaceNotifier>(
       builder: (context, state, child) {
         return Wrap(
-          children: [WorkspaceItem()],
+          children: const [WorkspaceItem()],
         );
       },
     );

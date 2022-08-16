@@ -7,7 +7,7 @@ class PublicProtocols extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      children: [
+      children: const [
         ProtocolItem(
           title: 'Avalanche',
           description:

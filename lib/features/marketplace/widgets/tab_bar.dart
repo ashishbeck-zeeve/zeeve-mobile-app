@@ -1,10 +1,5 @@
-import 'dart:ui';
-
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/diagnostics.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class MyTabBar extends StatelessWidget implements PreferredSizeWidget {
   const MyTabBar({Key? key}) : super(key: key);

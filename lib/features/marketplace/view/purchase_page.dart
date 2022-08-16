@@ -1,9 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/marketplace/provider/provider.dart';
-import 'package:zeeve/features/marketplace/widgets/marketplace_body.dart';
 import 'package:zeeve/features/marketplace/widgets/purchase_body.dart';
-import 'package:zeeve/features/marketplace/widgets/tab_bar.dart';
 
 /// {@template marketplace_page}
 /// A description for MarketplacePage

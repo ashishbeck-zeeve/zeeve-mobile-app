@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/signup/provider/provider.dart';
 import 'package:zeeve/features/signup/widgets/signup_body.dart';
@@ -18,8 +19,9 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => SignupNotifier(),
-      child: const Scaffold(
-        body: SignupView(),
+      child: Scaffold(
+        appBar: CommonWidgets.appBar(context, "Sign Up"),
+        body: const SignupView(),
       ),
     );
   }

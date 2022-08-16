@@ -18,19 +18,21 @@ class MyDrawerUI extends StatelessWidget {
     return Drawer(
       child: Container(
         decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [ZeeveColors.primary, Colors.white],
-                stops: [0.1, 0])),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [ZeeveColors.primary, Colors.white],
+            stops: [0.1, 0],
+          ),
+        ),
         child: Column(
           children: [
             const UserAccountsDrawerHeader(
               accountName: Text('John Doe'),
               accountEmail: Text('john@doe.com'),
               currentAccountPicture: CircleAvatar(
-                child: Text('JD'),
                 backgroundColor: ZeeveColors.secondary,
+                child: Text('JD'),
               ),
               decoration: BoxDecoration(color: ZeeveColors.primary),
             ),

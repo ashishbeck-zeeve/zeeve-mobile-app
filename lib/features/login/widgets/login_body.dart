@@ -40,12 +40,12 @@ class _LoginBodyState extends State<LoginBody> {
           child: Form(
             key: _formKey,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: ListView(
                 shrinkWrap: true,
                 children: [
                   Text(
-                    'Welcome back!',
+                    'Welcome to Zeeve!',
                     style: ZeeveTextStyle.headline2,
                   ),
                   const SizedBox(
@@ -58,27 +58,6 @@ class _LoginBodyState extends State<LoginBody> {
                   const SizedBox(
                     height: 16,
                   ),
-                  GoogleAuthButton(
-                    text: 'with Google',
-                    style: const AuthButtonStyle(
-                        // buttonType: AuthButtonType.icon,
-                        ),
-                    onPressed: () {},
-                  ),
-                  GithubAuthButton(
-                    text: 'with Github',
-                    style: const AuthButtonStyle(
-                        // buttonType: AuthButtonType.icon,
-                        ),
-                    onPressed: () {},
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  const Divider(),
-                  const SizedBox(
-                    height: 16,
-                  ),
                   TextFields.emailTextField(_emailController),
                   const SizedBox(
                     height: 8,
@@ -86,7 +65,7 @@ class _LoginBodyState extends State<LoginBody> {
                   TextFields.passwordTextField(_passwordController,
                       obscurity: false),
                   const SizedBox(
-                    height: 8,
+                    height: 16,
                   ),
                   state.isLoading
                       ? const Spinner()
@@ -111,11 +90,35 @@ class _LoginBodyState extends State<LoginBody> {
                               Navigator.push(context, SignupPage.route()),
                           child: Text(
                             "Sign up now",
-                            style: ZeeveTextStyle.caption
-                                .copyWith(color: ZeeveColors.primary),
+                            style: ZeeveTextStyle.caption.copyWith(
+                                color: ZeeveColors.primary,
+                                fontWeight: FontWeight.bold),
                           ),
                         ))
                       ])),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  const Divider(thickness: 2),
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  GoogleAuthButton(
+                    text: 'Sign up using Google',
+                    style: const AuthButtonStyle(
+                        margin: EdgeInsets.all(8), padding: EdgeInsets.all(10)
+                        // buttonType: AuthButtonType.icon,
+                        ),
+                    onPressed: () {},
+                  ),
+                  GithubAuthButton(
+                    text: 'Sign up using Github',
+                    style: const AuthButtonStyle(
+                        margin: EdgeInsets.all(8), padding: EdgeInsets.all(10)
+                        // buttonType: AuthButtonType.icon,
+                        ),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ),

@@ -46,14 +46,14 @@ class _SettingsPageState extends State<SettingsPage> {
           index: 0,
           height: 60.0,
           items: const <Widget>[
-            Icon(Icons.person),
-            Icon(Icons.cloud),
-            Icon(Icons.vpn_key),
-            Icon(Icons.shopping_cart)
+            Icon(Icons.person, color: ZeeveColors.white),
+            Icon(Icons.cloud, color: ZeeveColors.white),
+            Icon(Icons.vpn_key, color: ZeeveColors.white),
+            Icon(Icons.shopping_cart, color: ZeeveColors.white)
           ],
-          color: ZeeveColors.white,
-          buttonBackgroundColor: ZeeveColors.white,
-          backgroundColor: ZeeveColors.primary,
+          color: ZeeveColors.primary,
+          buttonBackgroundColor: ZeeveColors.primary,
+          backgroundColor: ZeeveColors.white,
           animationCurve: Curves.easeInOut,
           animationDuration: const Duration(milliseconds: 600),
           onTap: (index) {

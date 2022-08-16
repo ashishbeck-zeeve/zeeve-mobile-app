@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:zeeve/features/marketplace/view/purchase_page.dart';
 
 class ProtocolItem extends StatelessWidget {
-  ProtocolItem({
+  const ProtocolItem({
     Key? key,
     required this.title,
     required this.description,

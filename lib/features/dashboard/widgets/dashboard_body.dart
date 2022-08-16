@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:zeeve/features/dashboard/provider/provider.dart';
 import 'package:zeeve/features/dashboard/widgets/chart.dart';
 import 'package:zeeve/features/dashboard/widgets/health.dart';
 import 'package:zeeve/features/dashboard/widgets/license.dart';
 import 'package:zeeve/features/dashboard/widgets/nodes.dart';
 import 'package:zeeve/features/dashboard/widgets/summary.dart';
-import 'package:zeeve/models/drawer_page.dart';
 
 /// {@template dashboard_body}
 /// Body of the DashboardPage.

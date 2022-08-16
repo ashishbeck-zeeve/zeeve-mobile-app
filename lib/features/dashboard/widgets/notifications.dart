@@ -1,8 +1,6 @@
 import 'package:app_ui/app_ui.dart';
-import 'package:app_ui/src/colors.dart';
+import 'package:empty_widget/empty_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:zeeve/providers/auth.dart';
 
 /// {@template drawer}
 /// A custom drawer
@@ -20,16 +18,15 @@ class Notifications extends StatelessWidget {
       child: SafeArea(
         child: Container(
           color: ZeeveColors.white,
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(6.0),
           child: ListView(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Notifications',
-                    style: ZeeveTextStyle.headline2,
-                  ),
+                  Text('Notifications',
+                      style: ZeeveTextStyle.headline5
+                          .copyWith(color: ZeeveColors.primary)),
                   IconButton(
                     onPressed: () => Navigator.pop(context),
                     icon: const Icon(
@@ -40,12 +37,19 @@ class Notifications extends StatelessWidget {
                 ],
               ),
               const Divider(),
-              const ListTile(
-                leading: Icon(Icons.cleaning_services),
-                title: Text('No new notification'),
-              ),
+              // const ListTile(
+              //   leading: Icon(Icons.cleaning_services),
+              //   title: Text('No new notification'),
+              // ),
               const SizedBox(
                 height: 16,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: EmptyWidget(
+                  packageImage: PackageImage.Image_2,
+                  subTitle: "No new notifications",
+                ),
               )
             ],
           ),

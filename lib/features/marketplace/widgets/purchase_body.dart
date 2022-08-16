@@ -5,10 +5,6 @@ import 'package:zeeve/features/marketplace/provider/provider.dart';
 import 'package:zeeve/features/marketplace/widgets/cloud_providers_selector.dart';
 import 'package:zeeve/features/marketplace/widgets/cloud_selector.dart';
 import 'package:zeeve/features/marketplace/widgets/node_selector.dart';
-import 'package:zeeve/features/marketplace/widgets/permissive_protocols.dart';
-import 'package:zeeve/features/marketplace/widgets/protocol_item.dart';
-import 'package:zeeve/features/marketplace/widgets/public_protocols.dart';
-import 'package:zeeve/features/marketplace/widgets/tab_bar.dart';
 import 'package:zeeve/features/marketplace/widgets/textfield.dart';
 
 /// {@template marketplace_body}
@@ -53,7 +49,7 @@ class PurchaseBody extends StatelessWidget {
             FocusScope.of(context).unfocus();
           },
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(12.0),
             child: ListView(
               // crossAxisAlignment: CrossAxisAlignment.start,
               children: [

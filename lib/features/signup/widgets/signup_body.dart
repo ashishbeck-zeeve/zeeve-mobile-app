@@ -46,7 +46,7 @@ class _SignupBodyState extends State<SignupBody> {
           child: Form(
             key: _formKey,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12.0),
               child: ListView(
                 shrinkWrap: true,
                 children: [
@@ -55,28 +55,28 @@ class _SignupBodyState extends State<SignupBody> {
                     style: ZeeveTextStyle.headline2,
                   ),
                   const SizedBox(
-                    height: 16,
+                    height: 8,
                   ),
-                  const Divider(),
+                  const Divider(thickness: 2),
                   const SizedBox(
-                    height: 16,
+                    height: 8,
                   ),
                   TextFields.nameTextField(_firstController),
-                  const SizedBox(
-                    height: 8,
-                  ),
+                  // const SizedBox(
+                  //   height: 8,
+                  // ),
                   TextFields.nameTextField(_lastController, isFirst: false),
-                  const SizedBox(
-                    height: 8,
-                  ),
+                  // const SizedBox(
+                  //   height: 8,
+                  // ),
                   TextFields.emailTextField(_emailController),
                   const SizedBox(
-                    height: 8,
+                    height: 16,
                   ),
                   TextFields.passwordTextField(_passwordController,
                       obscurity: false),
                   const SizedBox(
-                    height: 8,
+                    height: 16,
                   ),
                   state.isLoading
                       ? const Spinner()

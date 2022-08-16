@@ -7,7 +7,7 @@ class PermissiveProtocols extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      children: [
+      children: const [
         ProtocolItem(
           title: 'Corda',
           description:

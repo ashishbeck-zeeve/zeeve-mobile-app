@@ -37,6 +37,7 @@ dependencies:
   fl_chart: ^0.55.1
   toggle_switch: ^2.0.1
   url_launcher: any
+  empty_widget: ^0.0.5
 
 dev_dependencies:
   flutter_test:

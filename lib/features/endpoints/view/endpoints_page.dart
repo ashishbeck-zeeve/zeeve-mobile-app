@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:zeeve/features/endpoints/provider/provider.dart';
 import 'package:zeeve/features/endpoints/widgets/endpoints_body.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
-import 'package:zeeve/features/networks/view/buysubscription_page.dart';
 
 class EndpointsPage extends StatelessWidget {
   const EndpointsPage({Key? key}) : super(key: key);
@@ -43,6 +42,6 @@ class EndpointsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BuySubscriptionPage(isnetworkPage: false);
+    return const EndpointsBody();
   }
 }

@@ -21,6 +21,7 @@ class TextFields {
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.next,
           decoration: const InputDecoration(
+            prefixIcon: Icon(Icons.email),
             hintText: 'your.email@gmail.com',
             border: OutlineInputBorder(),
           ),
@@ -66,6 +67,7 @@ class TextFields {
             // textInputAction:
             //     isPhoneMode ? TextInputAction.done : TextInputAction.next,
             decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.lock),
                 hintText: isConfirm ? 'Confirm Password' : 'Password',
                 border: const OutlineInputBorder(),
                 suffixIcon: IconButton(
@@ -106,6 +108,7 @@ class TextFields {
           textCapitalization: TextCapitalization.words,
           textInputAction: TextInputAction.next,
           decoration: InputDecoration(
+            prefixIcon: const Icon(Icons.person),
             hintText: '${isFirst ? 'First ' : 'Last '} Name',
             border: const OutlineInputBorder(),
           ),

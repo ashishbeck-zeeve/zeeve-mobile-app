@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/marketplace/provider/provider.dart';
 import 'package:zeeve/features/marketplace/widgets/permissive_protocols.dart';
-import 'package:zeeve/features/marketplace/widgets/protocol_item.dart';
 import 'package:zeeve/features/marketplace/widgets/public_protocols.dart';
-import 'package:zeeve/features/marketplace/widgets/tab_bar.dart';
 
 /// {@template marketplace_body}
 /// Body of the MarketplacePage.

@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:empty_widget/empty_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
@@ -50,7 +51,12 @@ class _CloudPageState extends State<CloudPage> {
               ),
             ),
             // const Spacer(),
-            const Expanded(child: Center(child: Text("No Data"))),
+            // const Expanded(child: Center(child: Text("No Data"))),
+            Expanded(
+                child: EmptyWidget(
+              packageImage: PackageImage.Image_3,
+              title: "No data",
+            ))
             // CommonWidgets.commonButton(context, "Add Cloud",
             //     icon: const Icon(Icons.add))
           ],

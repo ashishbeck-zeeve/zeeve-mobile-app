@@ -9,10 +9,6 @@ class ZdfsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> zdfswidgets = [
-      ElevatedButton(onPressed: () {}, child: const Text("data")),
-      const TitleCards()
-    ];
     return Consumer<ZdfsNotifier>(
       builder: (context, state, child) {
         return Padding(

@@ -1,11 +1,10 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:zeeve/features/marketplace/marketplace.dart';
-import 'package:zeeve/features/networks/view/buysubscription_page.dart';
+import 'package:zeeve/features/endpoints/endpoints.dart';
+import 'package:zeeve/features/networks/networks.dart';
 import 'package:zeeve/features/workspace/provider/provider.dart';
 import 'package:zeeve/features/workspace/widgets/resources_body.dart';
-import 'package:zeeve/features/workspace/widgets/workspace_body.dart';
 
 /// {@template workspace_page}
 /// A description for WorkspacePage
@@ -36,8 +35,7 @@ class ResourcesPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            BuySubscriptionPage(isnetworkPage: false)));
+                        builder: (context) => const EndpointsPage()));
               },
             ),
             SpeedDialChild(
@@ -47,8 +45,7 @@ class ResourcesPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>
-                            BuySubscriptionPage(isnetworkPage: true)));
+                        builder: (context) => const NetworksPage()));
               },
             ),
           ],

@@ -1,6 +1,6 @@
+import 'package:empty_widget/empty_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/workspace/provider/provider.dart';
-import 'package:zeeve/features/workspace/widgets/workspace_item.dart';
 
 /// {@template workspace_body}
 /// Body of the WorkspacePage.
@@ -15,8 +15,11 @@ class ResourcesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<WorkspaceNotifier>(
       builder: (context, state, child) {
-        return const Center(
-          child: Text('Add endpoints or networks to continue'),
+        return Center(
+          child: EmptyWidget(
+            packageImage: PackageImage.Image_4,
+            subTitle: "Add endpoints or networks to continue",
+          ),
         );
       },
     );

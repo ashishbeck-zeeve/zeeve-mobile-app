@@ -1,7 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:zeeve/features/endpoints/endpoints.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/networks/networks.dart';
@@ -75,15 +74,15 @@ class _ExplorePageState extends State<ExplorePage> {
                 void Function({Object? returnValue}) action) =>
             e.page,
       );
-      return ListTile(
-        leading: e.icon,
-        title: Text(e.title),
-        trailing: const Icon(Icons.keyboard_arrow_right),
-        onTap: () {
-          Navigator.of(context, rootNavigator: e.title == 'Settings')
-              .push(MaterialPageRoute(builder: (context) => e.page));
-        },
-      );
+      // return ListTile(
+      //   leading: e.icon,
+      //   title: Text(e.title),
+      //   trailing: const Icon(Icons.keyboard_arrow_right),
+      //   onTap: () {
+      //     Navigator.of(context, rootNavigator: e.title == 'Settings')
+      //         .push(MaterialPageRoute(builder: (context) => e.page));
+      //   },
+      // );
     }
 
     return Scaffold(

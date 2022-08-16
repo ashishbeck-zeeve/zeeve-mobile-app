@@ -2,7 +2,6 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/marketplace/view/marketplace_page.dart';
 import 'package:zeeve/features/networks/provider/provider.dart';
-import 'package:zeeve/features/networks/view/buysubscription_page.dart';
 import 'package:zeeve/features/networks/widgets/networks_body.dart';
 
 class NetworksPage extends StatelessWidget {
@@ -46,8 +45,6 @@ class NetworksView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BuySubscriptionPage(
-      isnetworkPage: true,
-    );
+    return const NetworksBody();
   }
 }

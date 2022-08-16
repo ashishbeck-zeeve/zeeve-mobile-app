@@ -31,8 +31,8 @@ class MyDrawer extends StatelessWidget {
               accountName: Text('John Doe'),
               accountEmail: Text('john@doe.com'),
               currentAccountPicture: CircleAvatar(
-                child: Text('JD'),
                 backgroundColor: ZeeveColors.secondary,
+                child: Text('JD'),
               ),
               decoration: BoxDecoration(color: ZeeveColors.primary),
             ),

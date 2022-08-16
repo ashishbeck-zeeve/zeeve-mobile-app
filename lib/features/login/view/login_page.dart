@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/login/provider/provider.dart';
 import 'package:zeeve/features/login/widgets/login_body.dart';
@@ -18,8 +19,9 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => LoginNotifier(),
-      child: const Scaffold(
-        body: LoginView(),
+      child: Scaffold(
+        appBar: CommonWidgets.appBar(context, "Sign In", showBack: false),
+        body: const LoginView(),
       ),
     );
   }
