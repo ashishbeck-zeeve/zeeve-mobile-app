@@ -8,9 +8,11 @@ class CommonWidgets {
     BuildContext context,
     String title, {
     bool showBack = true,
+    List<Widget>? actions,
+    PreferredSizeWidget? bottom,
   }) {
     return AppBar(
-      elevation: 10,
+      elevation: 0,
       title: Text(title),
       centerTitle: true,
       leading: showBack
@@ -21,6 +23,8 @@ class CommonWidgets {
               },
             )
           : null,
+      actions: actions,
+      bottom: bottom,
     );
   }
 

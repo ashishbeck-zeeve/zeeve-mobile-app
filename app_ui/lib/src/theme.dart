@@ -146,7 +146,7 @@ class ZeeveTheme {
   }
 
   static AppBarTheme get _appBarTheme {
-    return const AppBarTheme(color: ZeeveColors.primary);
+    return const AppBarTheme(color: ZeeveColors.primary, elevation: 0);
   }
 
   static ElevatedButtonThemeData get _elevatedButtonTheme {

@@ -23,8 +23,8 @@ class WorkspacePage extends StatelessWidget {
         appBar: CommonWidgets.appBar(context, 'Workspace'),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {},
-          label: Text('New Workspace'),
-          icon: Icon(Icons.add),
+          label: const Text('Add Workspace'),
+          icon: const Icon(Icons.add),
         ),
         body: const WorkspaceView(),
       ),

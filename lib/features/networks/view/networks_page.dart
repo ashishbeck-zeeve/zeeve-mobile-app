@@ -1,5 +1,6 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:zeeve/features/marketplace/view/marketplace_page.dart';
 import 'package:zeeve/features/networks/provider/provider.dart';
 import 'package:zeeve/features/networks/view/buysubscription_page.dart';
 import 'package:zeeve/features/networks/widgets/networks_body.dart';
@@ -21,15 +22,15 @@ class NetworksPage extends StatelessWidget {
       child: Scaffold(
         appBar: CommonWidgets.appBar(
           context,
-          'Network',
+          'Networks',
         ),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.pie_chart),
+        floatingActionButton: FloatingActionButton.extended(
+            icon: const Icon(Icons.add),
+            label: const Text('Add Network'),
             onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>
-                        BuySubscriptionPage(isnetworkPage: true)))),
+                    builder: (context) => const MarketplacePage()))),
         // appBar: AppBar(
         //   title: const Text("Network"),
         //   centerTitle: true,
@@ -45,6 +46,8 @@ class NetworksView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const NetworksBody();
+    return BuySubscriptionPage(
+      isnetworkPage: true,
+    );
   }
 }

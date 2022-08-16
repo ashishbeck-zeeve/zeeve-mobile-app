@@ -10,8 +10,10 @@ import 'package:zeeve/features/marketplace/marketplace.dart';
 /// Add what it does
 /// {@endtemplate}
 class Summary extends StatelessWidget {
+  ScrollController scrollController = ScrollController();
+
   /// {@macro dashboard_body}
-  const Summary({Key? key}) : super(key: key);
+  Summary({Key? key, required this.scrollController}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,15 @@ class Summary extends StatelessWidget {
                 'Summary',
                 style: ZeeveTextStyle.headline6,
               ),
+              onExpansionChanged: (val) async {
+                if (val) {
+                  final height = MediaQuery.of(context).size.height * 0.4;
+                  await Future.delayed(const Duration(milliseconds: 225));
+                  scrollController.animateTo(height,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeIn);
+                }
+              },
               children: const [
                 ListTile(
                   title: Text('Workspaces'),

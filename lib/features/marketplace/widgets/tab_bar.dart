@@ -12,7 +12,9 @@ class MyTabBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     _tabItem(String text) {
-      return Center(child: Text(text));
+      return Tab(
+        text: text,
+      );
     }
 
     final tabs = [
@@ -24,13 +26,12 @@ class MyTabBar extends StatelessWidget implements PreferredSizeWidget {
       tabs: tabs,
       indicatorColor: ZeeveColors.green,
       indicatorSize: TabBarIndicatorSize.label,
-      automaticIndicatorColorAdjustment: false,
-      labelPadding: const EdgeInsets.all(8),
-      // labelColor: ZeeveColors.white,
+      // labelPadding: const EdgeInsets.all(8),
+      labelColor: ZeeveColors.white,
       // unselectedLabelColor: ZeeveColors.darkGray,
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(24);
+  Size get preferredSize => const Size.fromHeight(46);
 }

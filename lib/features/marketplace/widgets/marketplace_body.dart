@@ -21,7 +21,7 @@ class MarketplaceBody extends StatelessWidget {
         return SafeArea(
           child: Column(
             children: const [
-              MyTabBar(),
+              // MyTabBar(),
               Divider(),
               Expanded(
                 child: TabBarView(

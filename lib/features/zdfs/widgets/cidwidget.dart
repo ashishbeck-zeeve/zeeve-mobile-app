@@ -17,7 +17,7 @@ class CIDWidget extends StatelessWidget {
               margin: const EdgeInsets.all(6),
               width: width,
               padding: const EdgeInsets.all(8),
-              height: height * 0.2,
+              // height: height * 0.2,
               decoration: BoxDecoration(
                 color: ZeeveColors.ternary,
                 border: Border.all(color: ZeeveColors.gray),

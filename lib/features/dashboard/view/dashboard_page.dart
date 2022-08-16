@@ -2,6 +2,8 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/dashboard/provider/provider.dart';
 import 'package:zeeve/features/dashboard/widgets/dashboard_body.dart';
+import 'package:zeeve/features/dashboard/widgets/drawer.dart';
+import 'package:zeeve/features/dashboard/widgets/notifications.dart';
 import 'package:zeeve/features/settings/settings.dart';
 import 'package:zeeve/models/drawer_page.dart';
 import 'package:zeeve/pages/home.dart';
@@ -32,8 +34,27 @@ class DashboardPage extends StatelessWidget {
         leading: e.icon,
         title: Text(e.title),
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => e.page));
+          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).push(
+            PageRouteBuilder(
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                var begin = const Offset(1, 0);
+                var end = Offset.zero;
+                var curve = Curves.easeOut;
+
+                var tween = Tween(begin: begin, end: end)
+                    .chain(CurveTween(curve: curve));
+                return SlideTransition(
+                  position: animation.drive(tween),
+                  child: child,
+                );
+              },
+              // transitionDuration: const Duration(milliseconds: 2000),
+              // reverseTransitionDuration: const Duration(milliseconds: 2000),
+              pageBuilder: (context, animation, animation2) => e.page,
+            ),
+          );
         },
       );
     }
@@ -42,9 +63,22 @@ class DashboardPage extends StatelessWidget {
       create: (_) => DashboardNotifier(),
       child: Scaffold(
         key: drawerScaffoldKey,
-        appBar: CommonWidgets.appBar(context, 'Dashboard', showBack: false),
+        appBar: CommonWidgets.appBar(
+          context,
+          'Dashboard',
+          showBack: false,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.notifications),
+              onPressed: () {
+                drawerScaffoldKey.currentState?.openEndDrawer();
+              },
+            )
+          ],
+        ),
         drawer:
             MyDrawer(drawerPages: drawerPages.map((e) => listItem(e)).toList()),
+        endDrawer: const Notifications(),
         body: const DashboardView(),
       ),
     );

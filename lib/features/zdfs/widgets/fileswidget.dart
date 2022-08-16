@@ -28,19 +28,16 @@ class FilesWidgegt extends StatelessWidget {
       margin: const EdgeInsets.all(6),
       width: width,
       padding: const EdgeInsets.all(8),
-      height: height * 0.15,
+      // height: height * 0.15,
       decoration: BoxDecoration(
         color: ZeeveColors.ternary,
         border: Border.all(color: ZeeveColors.gray),
         borderRadius: BorderRadius.circular(15),
       ),
       child: Column(children: [
-        Expanded(
-          child: Text(
-            'ZDFS / Files',
-            style:
-                ZeeveTextStyle.subtitle2.copyWith(color: ZeeveColors.primary),
-          ),
+        Text(
+          'ZDFS / Files',
+          style: ZeeveTextStyle.subtitle2.copyWith(color: ZeeveColors.primary),
         ),
         infoItem('Name', 'File'),
         infoItem('CID', 'NA'),

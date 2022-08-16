@@ -25,9 +25,14 @@ class DashboardBody extends StatelessWidget {
       const License(),
       const Nodes(),
       const Chart(),
-      const Summary(),
+      Summary(
+        scrollController: scrollController,
+      ),
       Health(
         scrollController: scrollController,
+      ),
+      const SizedBox(
+        height: 16,
       ),
     ];
     return Consumer<DashboardNotifier>(

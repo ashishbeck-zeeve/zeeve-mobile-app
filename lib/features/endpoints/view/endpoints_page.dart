@@ -2,6 +2,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/endpoints/provider/provider.dart';
 import 'package:zeeve/features/endpoints/widgets/endpoints_body.dart';
+import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/networks/view/buysubscription_page.dart';
 
 class EndpointsPage extends StatelessWidget {
@@ -19,13 +20,13 @@ class EndpointsPage extends StatelessWidget {
       ],
       child: Scaffold(
         appBar: CommonWidgets.appBar(context, 'Endpoints'),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.polyline_outlined),
+        floatingActionButton: FloatingActionButton.extended(
+            icon: const Icon(Icons.add),
+            label: const Text('Add Endpoint'),
             onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) =>
-                        BuySubscriptionPage(isnetworkPage: false)))),
+                    builder: (context) => const MarketplacePage()))),
         // appBar: AppBar(
         //   title: const Text("End Points"),
         //   centerTitle: true,
@@ -42,6 +43,6 @@ class EndpointsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const EndpointsBody();
+    return BuySubscriptionPage(isnetworkPage: false);
   }
 }

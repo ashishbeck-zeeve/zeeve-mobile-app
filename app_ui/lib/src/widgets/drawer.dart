@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 /// {@template drawer}
 /// A custom drawer
 /// {@endtemplate}
-class MyDrawer extends StatelessWidget {
+class MyDrawerUI extends StatelessWidget {
   /// {@macro drawer}
-  const MyDrawer({
+  const MyDrawerUI({
     Key? key,
     this.drawerPages,
   }) : super(key: key);
@@ -36,6 +36,13 @@ class MyDrawer extends StatelessWidget {
             ),
             const Spacer(),
             ...drawerPages ?? [],
+            // ListTile(
+            //   leading: const Icon(Icons.logout),
+            //   title: const Text('Logout'),
+            //   onTap: () {
+            //     final AuthWrap
+            //   },
+            // ),
             const SizedBox(
               height: 16,
             )

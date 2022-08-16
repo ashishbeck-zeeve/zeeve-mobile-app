@@ -23,7 +23,8 @@ class MarketplacePage extends StatelessWidget {
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
-          appBar: CommonWidgets.appBar(context, 'Marketplace'),
+          appBar: CommonWidgets.appBar(context, 'Marketplace',
+              bottom: const MyTabBar()),
           // drawer: const MyDrawer(),
           body: const MarketplaceView(),
         ),

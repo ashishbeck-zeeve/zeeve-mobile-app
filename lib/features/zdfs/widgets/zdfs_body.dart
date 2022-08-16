@@ -21,14 +21,13 @@ class ZdfsBody extends StatelessWidget {
               children: [
                 const TitleCards(),
                 const ZDFSButtons(),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  child: ListView.builder(
-                      itemCount: 5,
-                      itemBuilder: (context, index) {
-                        return const FilesWidgegt();
-                      }),
-                )
+                ListView.builder(
+                    itemCount: 5,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      return const FilesWidgegt();
+                    })
               ],
             ));
       },

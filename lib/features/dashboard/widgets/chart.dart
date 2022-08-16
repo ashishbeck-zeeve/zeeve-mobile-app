@@ -10,9 +10,16 @@ import 'package:zeeve/features/marketplace/marketplace.dart';
 ///
 /// Add what it does
 /// {@endtemplate}
-class Chart extends StatelessWidget {
+class Chart extends StatefulWidget {
   /// {@macro dashboard_body}
   const Chart({Key? key}) : super(key: key);
+
+  @override
+  State<Chart> createState() => _ChartState();
+}
+
+class _ChartState extends State<Chart> with AutomaticKeepAliveClientMixin {
+  bool isWaiting = true;
 
   BarChartGroupData makeGroupData(
     int x,
@@ -26,7 +33,11 @@ class Chart extends StatelessWidget {
       x: x,
       barRods: [
         BarChartRodData(
-          toY: isTouched ? y + 1 : y,
+          toY: isWaiting
+              ? 0
+              : isTouched
+                  ? y + 1
+                  : y,
           color: isTouched ? Colors.yellow : barColor,
           width: width,
           borderSide: isTouched
@@ -128,6 +139,14 @@ class Chart extends StatelessWidget {
       });
 
   @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(milliseconds: 500)).then(
+      (value) => setState(() => isWaiting = false),
+    );
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<DashboardNotifier>(
       builder: (context, state, child) {
@@ -149,6 +168,8 @@ class Chart extends StatelessWidget {
                         BarTouchData(touchTooltipData: touchToolTipData()),
                     gridData: FlGridData(show: false),
                   ),
+                  swapAnimationCurve: Curves.easeInOut,
+                  swapAnimationDuration: const Duration(milliseconds: 1000),
                 ),
               ),
             ),
@@ -157,4 +178,7 @@ class Chart extends StatelessWidget {
       },
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

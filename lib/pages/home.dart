@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       items: bottomNavBarItems,
       onItemSelected: (i) {
         drawerScaffoldKey.currentState?.closeDrawer();
+        drawerScaffoldKey.currentState?.closeEndDrawer();
       },
       confineInSafeArea: true,
       backgroundColor: lightNavBar, // Default is Colors.white.

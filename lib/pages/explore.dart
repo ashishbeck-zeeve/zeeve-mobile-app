@@ -1,5 +1,7 @@
+import 'package:animations/animations.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:zeeve/features/endpoints/endpoints.dart';
 import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/networks/networks.dart';
@@ -57,13 +59,29 @@ class _ExplorePageState extends State<ExplorePage> {
     ];
 
     Widget listItem(DrawerPage e) {
+      return OpenContainer(
+        closedElevation: 0,
+        closedColor: Theme.of(context).canvasColor,
+        openColor: Theme.of(context).canvasColor,
+        transitionDuration: const Duration(milliseconds: 400),
+        useRootNavigator: e.title == 'Settings',
+        closedBuilder: (BuildContext context, void Function() action) =>
+            ListTile(
+          leading: e.icon,
+          title: Text(e.title),
+          trailing: const Icon(Icons.keyboard_arrow_right),
+        ),
+        openBuilder: (BuildContext context,
+                void Function({Object? returnValue}) action) =>
+            e.page,
+      );
       return ListTile(
         leading: e.icon,
         title: Text(e.title),
         trailing: const Icon(Icons.keyboard_arrow_right),
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => e.page));
+          Navigator.of(context, rootNavigator: e.title == 'Settings')
+              .push(MaterialPageRoute(builder: (context) => e.page));
         },
       );
     }

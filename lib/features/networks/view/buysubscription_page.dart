@@ -57,73 +57,72 @@ class BuySubscriptionPage extends StatelessWidget {
     }
 
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const MarketplacePage())),
-        ),
-        appBar: CommonWidgets.appBar(
-          context,
-          isnetworkPage ? "Add Network" : "Add Endpoints",
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   child: const Icon(Icons.add),
+        //   onPressed: () => Navigator.push(context,
+        //       MaterialPageRoute(builder: (context) => const MarketplacePage())),
+        // ),
+        // appBar: CommonWidgets.appBar(
+        //   context,
+        //   isnetworkPage ? "Add Network" : "Add Endpoints",
+        // ),
         body: Container(
-          padding: const EdgeInsets.all(16),
-          width: width,
-          height: height,
-          child: Column(
-            mainAxisAlignment: isnetworkPage
-                ? MainAxisAlignment.start
-                : MainAxisAlignment.center,
+      padding: const EdgeInsets.all(16),
+      width: width,
+      height: height,
+      child: Column(
+        mainAxisAlignment:
+            isnetworkPage ? MainAxisAlignment.start : MainAxisAlignment.center,
+        children: [
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
             children: [
-              Wrap(
-                alignment: WrapAlignment.spaceBetween,
-                children: [
-                  isnetworkPage ? networkTile() : Container(),
-                  isnetworkPage
-                      ? CommonWidgets.messageButton(
-                          context,
-                          "Buy Subscription",
-                          isnetworkPage
-                              ? "Purchase nodes for your blockchain protocol"
-                              : "Purchase endpoints for your blockchain protocol",
-                          Icons.add,
-                          //     () {
-                          //   Navigator.push(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) => const MarketplacePage()));
-                          // }
-                        )
-                      : Center(
-                          child: CommonWidgets.messageButton(
-                          context,
-                          "Buy Subscription",
-                          isnetworkPage
-                              ? "Purchase nodes for your blockchain protocol"
-                              : "Purchase endpoints for your blockchain protocol",
-                          Icons.add,
-                          //     () {
-                          //   Navigator.push(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) => const MarketplacePage()));
-                          // }
-                        ))
-                ],
-              ),
-              // const Spacer(),
-              // Align(
-              //   alignment: Alignment.bottomCenter,
-              //   child: CommonWidgets.commonButton(context, "Buy Subscription",
-              //       icon: const Icon(Icons.add), onPressed: () {
-              //     Navigator.push(
-              //         context,
-              //         MaterialPageRoute(
-              //             builder: (context) => const MarketplacePage()));
-              //   }),
-              // ),
+              isnetworkPage ? networkTile() : Container(),
+              isnetworkPage
+                  ? CommonWidgets.messageButton(
+                      context,
+                      "Buy Subscription",
+                      isnetworkPage
+                          ? "Purchase nodes for your blockchain protocol"
+                          : "Purchase endpoints for your blockchain protocol",
+                      Icons.add,
+                      //     () {
+                      //   Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => const MarketplacePage()));
+                      // }
+                    )
+                  : Center(
+                      child: CommonWidgets.messageButton(
+                      context,
+                      "Buy Subscription",
+                      isnetworkPage
+                          ? "Purchase nodes for your blockchain protocol"
+                          : "Purchase endpoints for your blockchain protocol",
+                      Icons.add,
+                      //     () {
+                      //   Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //           builder: (context) => const MarketplacePage()));
+                      // }
+                    ))
             ],
           ),
-        ));
+          // const Spacer(),
+          // Align(
+          //   alignment: Alignment.bottomCenter,
+          //   child: CommonWidgets.commonButton(context, "Buy Subscription",
+          //       icon: const Icon(Icons.add), onPressed: () {
+          //     Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) => const MarketplacePage()));
+          //   }),
+          // ),
+        ],
+      ),
+    ));
   }
 }

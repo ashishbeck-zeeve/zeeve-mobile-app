@@ -37,21 +37,9 @@ class _SettingsPageState extends State<SettingsPage> {
         ChangeNotifierProvider(create: (_) => SettingsNotifier()),
       ],
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(titles[page]),
-          centerTitle: true,
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.notifications),
-              onPressed: () {},
-            )
-          ],
-          leading: IconButton(
-            icon: const Icon(Icons.keyboard_arrow_left),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+        appBar: CommonWidgets.appBar(
+          context,
+          titles[page],
         ),
         bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
