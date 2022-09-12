@@ -53,9 +53,9 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              profileTiles("Prakash", Icons.person),
-              profileTiles("H", Icons.person),
-              profileTiles("prakash.h@zeeve.io", Icons.email),
+              profileTiles("First Name", Icons.person),
+              profileTiles("Last Name", Icons.person),
+              profileTiles("xyz@gmail.com", Icons.email),
               profileTiles("Not set", Icons.call),
               profileTiles("Not set", Icons.public)
             ],

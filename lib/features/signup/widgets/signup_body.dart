@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/login/login.dart';
 import 'package:zeeve/features/signup/provider/provider.dart';
@@ -31,7 +32,7 @@ class _SignupBodyState extends State<SignupBody> {
       _firstController.text,
       _lastController.text,
     );
-    print(result);
+    if (kDebugMode) print(result);
     authWrapper.updateAuthToken(result);
     if (mounted) Navigator.pop(context);
   }

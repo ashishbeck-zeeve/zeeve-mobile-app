@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zeeve/features/login/view/login_page.dart';
@@ -16,7 +17,7 @@ class AuthWrapperPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AuthWrapperNotifier>(
       builder: (context, state, child) {
-        print('main wrapper is ${state.authToken}');
+        if (kDebugMode) print('main wrapper is ${state.authToken}');
         if (state.authToken == null) return const LoginPage();
         return const HomePage();
       },
