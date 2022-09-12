@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zeeve/features/zdfs/widgets/purchasesubscription.dart';
@@ -36,7 +37,7 @@ class ZDFSButtons extends StatelessWidget {
       if (await canLaunchUrl(Uri.parse(url))) {
         await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
       } else {
-        print("Can't open the URL");
+       if(kDebugMode)print("Can't open the URL");
       }
     }
 

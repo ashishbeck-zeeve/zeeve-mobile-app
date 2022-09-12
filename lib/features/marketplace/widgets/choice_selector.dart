@@ -16,8 +16,6 @@ class ChoiceSelector extends StatefulWidget {
 class _ChoiceSelectorState extends State<ChoiceSelector> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(children: widget.options),
-    );
+    return Row(children: widget.options);
   }
 }

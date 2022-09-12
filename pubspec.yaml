@@ -38,6 +38,7 @@ dependencies:
   toggle_switch: ^2.0.1
   url_launcher: any
   empty_widget: ^0.0.5
+  multiselect: ^0.0.7
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,8 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/logo.jpg
+    - assets/logo.png
   # fonts:
   #   - family: Schyler
   #     fonts:

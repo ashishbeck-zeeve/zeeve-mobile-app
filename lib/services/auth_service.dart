@@ -1,14 +1,16 @@
 // import 'package:zeeve/features/storage_wrapper/provider/provider.dart';
 
+import 'package:flutter/foundation.dart';
+
 final AuthService authService = AuthService._();
 
 class AuthService {
   AuthService._();
 
   Future<String> signIn(String email, String password) async {
-    print("signing in");
+    if (kDebugMode) print("signing in");
     await Future.delayed(const Duration(milliseconds: 1000));
-    print("signed in");
+    if (kDebugMode) print("signed in");
     return "value";
   }
 
@@ -18,16 +20,16 @@ class AuthService {
     String firstName,
     String lastName,
   ) async {
-    print("signing up");
+    if (kDebugMode) print("signing up");
     await Future.delayed(const Duration(milliseconds: 1000));
-    print("signed up");
+    if (kDebugMode) print("signed up");
     return "value";
   }
 
   Future<bool> signOut() async {
-    print("signing out");
+    if (kDebugMode) print("signing out");
     await Future.delayed(const Duration(milliseconds: 500));
-    print("signed out");
+    if (kDebugMode) print("signed out");
     return true;
   }
 }

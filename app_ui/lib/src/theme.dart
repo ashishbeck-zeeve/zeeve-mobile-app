@@ -153,10 +153,10 @@ class ZeeveTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
+        backgroundColor: ZeeveColors.primary,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
-        primary: ZeeveColors.primary,
         fixedSize: const Size(208, 54),
       ),
     );
@@ -165,11 +165,11 @@ class ZeeveTheme {
   static OutlinedButtonThemeData get _outlinedButtonTheme {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
+        foregroundColor: ZeeveColors.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
         side: const BorderSide(color: ZeeveColors.white, width: 2),
-        primary: ZeeveColors.white,
         fixedSize: const Size(208, 54),
       ),
     );
