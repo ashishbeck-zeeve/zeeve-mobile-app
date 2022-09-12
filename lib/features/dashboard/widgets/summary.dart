@@ -26,20 +26,21 @@ class Summary extends StatelessWidget {
               borderRadius: BorderRadius.circular(15),
               color: ZeeveColors.gray,
             ),
-            child: ExpansionTile(
-              title: Text(
-                'Summary',
-                style: ZeeveTextStyle.headline6,
-              ),
-              onExpansionChanged: (val) async {
-                if (val) {
-                  final height = MediaQuery.of(context).size.height * 0.4;
-                  await Future.delayed(const Duration(milliseconds: 225));
-                  scrollController.animateTo(height,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeIn);
-                }
-              },
+            child: Column(
+              // child: ExpansionTile(
+              // title: Text(
+              //   'Summary',
+              //   style: ZeeveTextStyle.headline6,
+              // ),
+              // onExpansionChanged: (val) async {
+              //   if (val) {
+              //     final height = MediaQuery.of(context).size.height * 0.4;
+              //     await Future.delayed(const Duration(milliseconds: 225));
+              //     scrollController.animateTo(height,
+              //         duration: const Duration(milliseconds: 200),
+              //         curve: Curves.easeIn);
+              //   }
+              // },
               children: const [
                 ListTile(
                   title: Text('Workspaces'),

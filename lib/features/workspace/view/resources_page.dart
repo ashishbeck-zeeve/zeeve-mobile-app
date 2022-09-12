@@ -45,7 +45,7 @@ class ResourcesPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const NetworksPage()));
+                        builder: (context) => const AllNetworksPage()));
               },
             ),
           ],

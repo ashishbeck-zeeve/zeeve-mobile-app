@@ -8,12 +8,12 @@ void main() {
   group('NetworksPage', () {
     group('route', () {
       test('is routable', () {
-        expect(NetworksPage.route(), isA<MaterialPageRoute>());
+        expect(AllNetworksPage.route(), isA<MaterialPageRoute>());
       });
     });
 
     testWidgets('renders NetworksView', (tester) async {
-      await tester.pumpWidget(MaterialApp(home: NetworksPage()));
+      await tester.pumpWidget(MaterialApp(home: AllNetworksPage()));
       expect(find.byType(NetworksView), findsOneWidget);
     });
   });

@@ -1,9 +1,11 @@
+import 'package:animations/animations.dart';
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:zeeve/features/dashboard/provider/provider.dart';
 import 'package:zeeve/features/dashboard/widgets/dashboard_body.dart';
 import 'package:zeeve/features/dashboard/widgets/drawer.dart';
 import 'package:zeeve/features/dashboard/widgets/notifications.dart';
+import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/settings/settings.dart';
 import 'package:zeeve/models/drawer_page.dart';
 import 'package:zeeve/pages/home.dart';
@@ -75,6 +77,24 @@ class DashboardPage extends StatelessWidget {
               },
             )
           ],
+        ),
+        floatingActionButton: OpenContainer(
+          closedElevation: 10,
+          closedColor: Theme.of(context).primaryColor,
+          openColor: Theme.of(context).canvasColor,
+          transitionDuration: const Duration(milliseconds: 400),
+          closedShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30),
+          ),
+          closedBuilder: (BuildContext context, void Function() action) =>
+              const FloatingActionButton.extended(
+            icon: Icon(Icons.add),
+            label: Text('Deploy Node'),
+            onPressed: null,
+          ),
+          openBuilder: (BuildContext context,
+                  void Function({Object? returnValue}) action) =>
+              const MarketplacePage(),
         ),
         drawer:
             MyDrawer(drawerPages: drawerPages.map((e) => listItem(e)).toList()),

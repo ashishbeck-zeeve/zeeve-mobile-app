@@ -18,6 +18,7 @@ class Chart extends StatefulWidget {
 
 class _ChartState extends State<Chart> with AutomaticKeepAliveClientMixin {
   bool isWaiting = true;
+  int touchedIndex = -1;
 
   BarChartGroupData makeGroupData(
     int x,
@@ -51,6 +52,73 @@ class _ChartState extends State<Chart> with AutomaticKeepAliveClientMixin {
       ],
       showingTooltipIndicators: showTooltips,
     );
+  }
+
+  List<PieChartSectionData> showingSections() {
+    return List.generate(5, (i) {
+      final isTouched = i == touchedIndex;
+      final fontSize = isTouched ? 25.0 : 16.0;
+      final radius = isTouched ? 80.0 : 70.0;
+      switch (i) {
+        case 0:
+          return PieChartSectionData(
+            color: const Color(0xFFFA8B8C),
+            value: isWaiting ? 0 : 40,
+            title: 'AWS\n(40%)',
+            radius: radius,
+            titleStyle: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffffffff)),
+          );
+        case 1:
+          return PieChartSectionData(
+            color: const Color(0xFF3585FA),
+            value: isWaiting ? 0 : 30,
+            title: 'Azure\n(30%)',
+            radius: radius,
+            titleStyle: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffffffff)),
+          );
+        case 2:
+          return PieChartSectionData(
+            color: const Color(0xFFFFCB55),
+            value: isWaiting ? 0 : 15,
+            title: 'D.O\n(15%)',
+            radius: radius,
+            titleStyle: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffffffff)),
+          );
+        case 3:
+          return PieChartSectionData(
+            color: const Color(0xFF60CDA2),
+            value: isWaiting ? 0 : 7.5,
+            title: 'GCP\n(7.5%)',
+            radius: radius,
+            titleStyle: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffffffff)),
+          );
+        case 4:
+          return PieChartSectionData(
+            color: const Color(0xFFF86A9D),
+            value: isWaiting ? 0 : 7.5,
+            title: 'IBM\n(7.5%)',
+            radius: radius,
+            titleStyle: TextStyle(
+                fontSize: fontSize,
+                fontWeight: FontWeight.bold,
+                color: const Color(0xffffffff)),
+          );
+        default:
+          throw Error();
+      }
+    });
   }
 
   List<BarChartGroupData> showingGroups() => List.generate(5, (i) {
@@ -146,6 +214,7 @@ class _ChartState extends State<Chart> with AutomaticKeepAliveClientMixin {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Consumer<DashboardNotifier>(
       builder: (context, state, child) {
         return Column(
@@ -156,18 +225,31 @@ class _ChartState extends State<Chart> with AutomaticKeepAliveClientMixin {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                height: 200,
-                child: BarChart(
-                  BarChartData(
-                    barGroups: showingGroups(),
-                    titlesData: titlesData(),
-                    barTouchData:
-                        BarTouchData(touchTooltipData: touchToolTipData()),
-                    gridData: FlGridData(show: false),
-                  ),
-                  swapAnimationCurve: Curves.easeInOut,
-                  swapAnimationDuration: const Duration(milliseconds: 1000),
+              child: AspectRatio(
+                aspectRatio: 1,
+                child: PieChart(
+                  PieChartData(
+                      pieTouchData: PieTouchData(touchCallback:
+                          (FlTouchEvent event, pieTouchResponse) {
+                        setState(() {
+                          if (!event.isInterestedForInteractions ||
+                              pieTouchResponse == null ||
+                              pieTouchResponse.touchedSection == null) {
+                            touchedIndex = -1;
+                            return;
+                          }
+                          touchedIndex = pieTouchResponse
+                              .touchedSection!.touchedSectionIndex;
+                        });
+                      }),
+                      borderData: FlBorderData(
+                        show: false,
+                      ),
+                      sectionsSpace: 0,
+                      centerSpaceRadius: width / 4,
+                      sections: showingSections()),
+                  // swapAnimationCurve: Curves.easeInOut,
+                  // swapAnimationDuration: const Duration(milliseconds: 1000),
                 ),
               ),
             ),

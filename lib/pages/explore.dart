@@ -38,7 +38,7 @@ class _ExplorePageState extends State<ExplorePage> {
       DrawerPage(
         title: 'Networks',
         icon: const Icon(Icons.pie_chart, color: ZeeveColors.primary),
-        page: const NetworksPage(),
+        page: const AllNetworksPage(),
       ),
       DrawerPage(
         title: 'Endpoints',

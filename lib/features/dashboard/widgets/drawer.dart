@@ -2,6 +2,7 @@ import 'package:app_ui/app_ui.dart';
 import 'package:app_ui/src/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:zeeve/features/dashboard/widgets/license.dart';
 import 'package:zeeve/providers/auth.dart';
 
 /// {@template drawer}
@@ -36,6 +37,7 @@ class MyDrawer extends StatelessWidget {
               ),
               decoration: BoxDecoration(color: ZeeveColors.primary),
             ),
+            const License(),
             const Spacer(),
             ...drawerPages ?? [],
             ListTile(

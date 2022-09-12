@@ -20,8 +20,8 @@ class DashboardBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> items = [
-      const License(),
-      const Nodes(),
+      // const License(),
+      // const Nodes(),
       const Chart(),
       Summary(
         scrollController: scrollController,
@@ -30,7 +30,7 @@ class DashboardBody extends StatelessWidget {
         scrollController: scrollController,
       ),
       const SizedBox(
-        height: 16,
+        height: 64,
       ),
     ];
     return Consumer<DashboardNotifier>(
