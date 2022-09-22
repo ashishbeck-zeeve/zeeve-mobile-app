@@ -3,6 +3,10 @@ import 'package:zeeve/features/marketplace/marketplace.dart';
 import 'package:zeeve/features/workspace/view/workspace_page.dart';
 import 'package:zeeve/models/drawer_page.dart';
 
+const kSwitchDuration = Duration(milliseconds: 150);
+const kPageDuration = Duration(milliseconds: 250);
+const kPageCurve = Curves.easeInOutCubic;
+
 List<DrawerPage> kPages = [
   DrawerPage(
     title: 'Dashboard',

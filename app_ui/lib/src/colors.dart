@@ -41,6 +41,9 @@ abstract class ZeeveColors {
   /// Orange
   static const Color orange = Color(0xFFFFBB00);
 
+  /// Red
+  static const Color red = Color(0xFFD10000);
+
   /// Charcoal
   static const Color charcoal = Color(0xBF202124);
 }

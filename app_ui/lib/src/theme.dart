@@ -21,6 +21,7 @@ class ZeeveTheme {
       bottomSheetTheme: _bottomSheetTheme,
       tabBarTheme: _tabBarTheme,
       dividerTheme: _dividerTheme,
+      inputDecorationTheme: _inputDecorationTheme,
     );
   }
 
@@ -37,6 +38,14 @@ class ZeeveTheme {
   /// `ThemeData` for Zeeve UI for large screens.
   static ThemeData get large {
     return standard.copyWith(textTheme: _largeTextTheme);
+  }
+
+  static InputDecorationTheme get _inputDecorationTheme {
+    return InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+    );
   }
 
   static TextTheme get _textTheme {

@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:zeeve/core/constants.dart';
+import 'package:zeeve/models/new_network_params.dart';
 
 class NetworksNotifier with ChangeNotifier {
-  int _count = 0;
+  final _pageController = PageController();
+  PageController get pageController => _pageController;
 
-  int get count => _count;
+  NewNetworkParams _params = NewNetworkParams.empty();
+  NewNetworkParams get params => _params;
 
-  void increment() {
-    _count++;
+  void nextPage() async {
+    await _pageController.nextPage(duration: kPageDuration, curve: kPageCurve);
     notifyListeners();
   }
 
-  void decrement() {
-    _count--;
-    notifyListeners();
-  }
-
-  void reset() {
-    _count = 0;
+  void previousPage() async {
+    await _pageController.previousPage(
+        duration: kPageDuration, curve: kPageCurve);
     notifyListeners();
   }
 }

@@ -54,7 +54,7 @@ class ZeeveTextStyle {
   /// Headline 6 Text Style
   static TextStyle get headline6 {
     return _baseTextStyle.copyWith(
-      fontSize: 22,
+      fontSize: 18,
       fontWeight: ZeeveFontWeight.bold,
     );
   }

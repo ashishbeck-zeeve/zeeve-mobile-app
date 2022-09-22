@@ -62,19 +62,19 @@ class _SignupBodyState extends State<SignupBody> {
                   const SizedBox(
                     height: 8,
                   ),
-                  TextFields.nameTextField(_firstController),
+                  InputFields.nameTextField(_firstController),
                   // const SizedBox(
                   //   height: 8,
                   // ),
-                  TextFields.nameTextField(_lastController, isFirst: false),
+                  InputFields.nameTextField(_lastController, isFirst: false),
                   // const SizedBox(
                   //   height: 8,
                   // ),
-                  TextFields.emailTextField(_emailController),
+                  InputFields.emailTextField(_emailController),
                   const SizedBox(
                     height: 16,
                   ),
-                  TextFields.passwordTextField(_passwordController,
+                  InputFields.passwordTextField(_passwordController,
                       obscurity: false),
                   const SizedBox(
                     height: 16,

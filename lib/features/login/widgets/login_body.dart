@@ -58,11 +58,11 @@ class _LoginBodyState extends State<LoginBody> {
                   const SizedBox(
                     height: 16,
                   ),
-                  TextFields.emailTextField(_emailController),
+                  InputFields.emailTextField(_emailController),
                   const SizedBox(
                     height: 8,
                   ),
-                  TextFields.passwordTextField(_passwordController,
+                  InputFields.passwordTextField(_passwordController,
                       obscurity: false),
                   const SizedBox(
                     height: 16,

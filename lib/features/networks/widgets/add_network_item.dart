@@ -1,6 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:zeeve/features/networks/view/new_network_page.dart';
 
 class AddNetworkItem extends StatelessWidget {
   final String imgPath;
@@ -21,49 +22,55 @@ class AddNetworkItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: const RoundedRectangleBorder(
-        borderRadius: ZeeveConstants.radius,
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const NewNetworkPage()));
+      },
+      child: Card(
+        shape: const RoundedRectangleBorder(
+          borderRadius: ZeeveConstants.radius,
+        ),
+        child: Container(
+            margin: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
+            // decoration: BoxDecoration(
+            // color: ZeeveColors.primary,
+            // borderRadius: const BorderRadius.all(Radius.circular(25.0)),
+            // border: Border.all()
+            // border: Border.all(color: ZeeveColors.secondary),
+            // ),
+            // width: 180,
+            // height: 180,
+            constraints: const BoxConstraints(minHeight: 180),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SvgPicture.asset(
+                  imgPath,
+                  width: 175,
+                ),
+                Text.rich(TextSpan(children: [
+                  WidgetSpan(child: Icon(Icons.bubble_chart)),
+                  TextSpan(text: text1)
+                ])),
+                Text.rich(TextSpan(children: [
+                  WidgetSpan(child: Icon(Icons.bubble_chart)),
+                  TextSpan(text: text2)
+                ])),
+                Text.rich(TextSpan(children: [
+                  WidgetSpan(child: Icon(Icons.bubble_chart)),
+                  TextSpan(text: text3)
+                ])),
+                const Divider(),
+                Text(
+                  "Available: $availableNodes/$totalNodes Nodes",
+                  style: ZeeveTextStyle.caption,
+                )
+              ],
+            )),
       ),
-      child: Container(
-          margin: const EdgeInsets.all(8),
-          padding: const EdgeInsets.all(8),
-          // decoration: BoxDecoration(
-          // color: ZeeveColors.primary,
-          // borderRadius: const BorderRadius.all(Radius.circular(25.0)),
-          // border: Border.all()
-          // border: Border.all(color: ZeeveColors.secondary),
-          // ),
-          // width: 180,
-          // height: 180,
-          constraints: const BoxConstraints(minHeight: 180),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SvgPicture.asset(
-                imgPath,
-                width: 175,
-              ),
-              Text.rich(TextSpan(children: [
-                WidgetSpan(child: Icon(Icons.bubble_chart)),
-                TextSpan(text: text1)
-              ])),
-              Text.rich(TextSpan(children: [
-                WidgetSpan(child: Icon(Icons.bubble_chart)),
-                TextSpan(text: text2)
-              ])),
-              Text.rich(TextSpan(children: [
-                WidgetSpan(child: Icon(Icons.bubble_chart)),
-                TextSpan(text: text3)
-              ])),
-              const Divider(),
-              Text(
-                "Available: $availableNodes/$totalNodes Nodes",
-                style: ZeeveTextStyle.caption,
-              )
-            ],
-          )),
     );
   }
 }
